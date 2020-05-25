@@ -28,7 +28,7 @@ public class MenuWindow extends JPanel{
 		//The spacing inbetween the buttons
 		int spacer = 10;
 		Color textColor = new Color(74, 189, 105);
-		Color btnColor = new Color(74, 177, 189,127);
+		Color btnColor = new Color(74, 177, 189);
 		
 		JLabel board = new JLabel();
 		board.setBounds(0, 0, 900, 900);
