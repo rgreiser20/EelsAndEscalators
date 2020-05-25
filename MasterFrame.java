@@ -22,8 +22,11 @@ import javax.swing.JPanel;
 	* if you get all eels and a number, disregard the number , move toward the nearest eels and move down it
 	* if you get escalators, do the same as you would with the eels
  */
-public class MasterFrame extends JFrame{
+public class MasterFrame extends JFrame {
+	private static int numPlayers;
+	
 	public MasterFrame() {
+		numPlayers = 1;
 		setBounds(10,10,916,939);
 		setTitle("Eels and Escalators");
 		setResizable(false);
@@ -48,5 +51,16 @@ public class MasterFrame extends JFrame{
 		new MasterFrame();
 
 	}
-
+	
+	public static int getCount() {
+		return numPlayers;
+	}
+	
+	public static void changeCount(String c)
+	{
+		if(c.equals("+"))
+			numPlayers++;
+		if(c.equals("-"))
+			numPlayers--;
+	}
 }

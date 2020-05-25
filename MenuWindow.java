@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
  * 
@@ -26,6 +27,8 @@ public class MenuWindow extends JPanel{
 		this.setLayout(null);
 		//The spacing inbetween the buttons
 		int spacer = 10;
+		Color textColor = new Color(74, 189, 105);
+		Color btnColor = new Color(74, 177, 189,127);
 		
 		JLabel board = new JLabel();
 		board.setBounds(0, 0, 900, 900);
@@ -37,22 +40,22 @@ public class MenuWindow extends JPanel{
 			e.printStackTrace();
 		}
 		
-		JLabel BackgroundDarkner = new JLabel("testing in a seperate class");
+		JLabel BackgroundDarkner = new JLabel("");
 		BackgroundDarkner.setBounds(0, 0, 900, 900);
-		BackgroundDarkner.setBackground(new Color(0,0,0,200));
+		BackgroundDarkner.setBackground(new Color(50,50,50,200));
 		BackgroundDarkner.setOpaque(true);
 		
 		JButton playBtn = new JButton("Start Game");
 		playBtn.setSize(450,100);
 		playBtn.setFont(new Font("DIALOG", 0, 75));
-		playBtn.setBackground(new Color(0,0,0,127));
+		playBtn.setBackground(btnColor);
 		playBtn.setBorderPainted(false);
 		playBtn.setLocation(parent.getWidth()/2 - playBtn.getWidth()/2, parent.getHeight()/2 - playBtn.getHeight()/2);
 		playBtn.addActionListener(new ActionListener() {
 		
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//cl.show(containedIn, sendToGame);
+				cl.show(containedIn, sendToGame);
 				if(playBtn.getForeground().equals(Color.red))
 					playBtn.setForeground(Color.blue);
 				else
@@ -64,7 +67,8 @@ public class MenuWindow extends JPanel{
 		JButton rulesBtn = new JButton("Rules");
 		rulesBtn.setSize(450,100);
 		rulesBtn.setFont(new Font("DIALOG", 0, 75));
-		rulesBtn.setBackground(new Color(0,0,0,127));
+		rulesBtn.setBackground(btnColor);
+		
 		rulesBtn.setBorderPainted(false);
 		rulesBtn.setLocation(playBtn.getX(), playBtn.getY()+playBtn.getHeight() + spacer);
 		rulesBtn.addActionListener(new ActionListener() {
@@ -77,6 +81,63 @@ public class MenuWindow extends JPanel{
 			}
 		});
 		
+		JButton decrBtn = new JButton("-");
+		decrBtn.setSize(450/3,100);
+		decrBtn.setFont(new Font("DIALOG", 0, 75));
+		decrBtn.setBackground(btnColor);
+		
+		decrBtn.setBorderPainted(false);
+		decrBtn.setLocation(playBtn.getX(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
+		
+		JButton incrBtn = new JButton("+");
+		incrBtn.setSize(450/3,100);
+		incrBtn.setFont(new Font("DIALOG", 0, 75));
+		incrBtn.setBackground(btnColor);
+		
+		incrBtn.setBorderPainted(false);
+		incrBtn.setLocation(playBtn.getX() + playBtn.getWidth() - incrBtn.getWidth(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
+		
+		JLabel pCount = new JLabel("" + MasterFrame.getCount());
+		pCount.setSize(450/3, 100);
+		pCount.setLocation(decrBtn.getX()+decrBtn.getWidth(), decrBtn.getY());
+		pCount.setFont(new Font("DIALOG", 0, 75));
+		pCount.setBackground(btnColor);
+		pCount.setOpaque(true);
+		pCount.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		decrBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(MasterFrame.getCount() > 1) {
+					MasterFrame.changeCount("-");
+					pCount.setText("" + MasterFrame.getCount());
+				}
+			}
+			
+		});
+		
+		incrBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(MasterFrame.getCount() < 4) {
+					MasterFrame.changeCount("+");
+					pCount.setText("" + MasterFrame.getCount());
+				}
+			}
+			
+		});
+		
+		pCount.setForeground(textColor);
+		incrBtn.setForeground(textColor);
+		decrBtn.setForeground(textColor);
+		rulesBtn.setForeground(textColor);
+		playBtn.setForeground(textColor);
+		
+		this.add(pCount);
+		this.add(incrBtn);
+		this.add(decrBtn);
 		this.add(rulesBtn);
 		this.add(playBtn);
 		this.add(BackgroundDarkner);
