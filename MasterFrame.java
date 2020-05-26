@@ -22,12 +22,12 @@ import javax.swing.JPanel;
 	* if you get all eels and a number, disregard the number , move toward the nearest eels and move down it
 	* if you get escalators, do the same as you would with the eels
  */
-public class MasterFrame extends JFrame {
+public class MasterFrame extends JFrame { 
 	private static int numPlayers;
 	
 	public MasterFrame() {
 		numPlayers = 1;
-		setBounds(10,10,916,939);
+		setBounds(10,10,916,939); 
 		setTitle("Eels and Escalators");
 		setResizable(false);
 		
@@ -36,11 +36,14 @@ public class MasterFrame extends JFrame {
 		CardLayout cl = new CardLayout();
 		overall.setLayout(cl);
 		
-		MenuWindow menu = new MenuWindow(this, cl, overall, "game");
+		MenuWindow menu = new MenuWindow(this, cl, overall, "game", "darules");
 		GameWindow game = new GameWindow();
+		DaRules rules = new DaRules(this);
 		
 		overall.add(game, "game");
 		overall.add(menu, "menu");
+		overall.add(rules, "darules");
+		
 		
 		cl.show(overall, "menu");
 		add(overall);
