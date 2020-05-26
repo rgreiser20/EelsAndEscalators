@@ -8,4 +8,4 @@
   * Figure out the movements of the pieces
     * Move them manually with mouse
     * Move them automatically
-hi ryan
+*hi ryan
