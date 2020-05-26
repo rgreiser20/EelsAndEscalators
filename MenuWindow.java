@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
  */
 public class MenuWindow extends JPanel{
 	
-	public MenuWindow(JFrame parent, CardLayout cl, JPanel containedIn, String sendToGame) {
+	public MenuWindow(JFrame parent, CardLayout cl, JPanel containedIn, String sendToGame, String sendToRules) {
 		this.setSize(400, 300);
 		this.setLayout(null);
 		//The spacing inbetween the buttons
@@ -69,16 +69,14 @@ public class MenuWindow extends JPanel{
 		rulesBtn.setSize(450,100);
 		rulesBtn.setFont(new Font("DIALOG", 0, 75));
 		rulesBtn.setBackground(btnColor);
+	
 		
 		rulesBtn.setBorderPainted(false);
 		rulesBtn.setLocation(playBtn.getX(), playBtn.getY()+playBtn.getHeight() + spacer);
 		rulesBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-				if(rulesBtn.getForeground().equals(Color.red))
-					rulesBtn.setForeground(Color.blue);
-				else
-					rulesBtn.setForeground(Color.red);
+				cl.show(containedIn, sendToRules);
 			}
 		});
 		
