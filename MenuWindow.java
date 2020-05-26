@@ -52,6 +52,7 @@ public class MenuWindow extends JPanel{
 		playBtn.setBackground(btnColor);
 		playBtn.setBorderPainted(false);
 		playBtn.setLocation(parent.getWidth()/2 - playBtn.getWidth()/2, parent.getHeight()/2 - playBtn.getHeight()/2);
+		playBtn.setOpaque(false);
 		playBtn.addActionListener(new ActionListener() {
 		
 			@Override
@@ -69,9 +70,9 @@ public class MenuWindow extends JPanel{
 		rulesBtn.setSize(450,100);
 		rulesBtn.setFont(new Font("DIALOG", 0, 75));
 		rulesBtn.setBackground(btnColor);
-	
 		
 		rulesBtn.setBorderPainted(false);
+		rulesBtn.setOpaque(false);
 		rulesBtn.setLocation(playBtn.getX(), playBtn.getY()+playBtn.getHeight() + spacer);
 		rulesBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
@@ -87,6 +88,7 @@ public class MenuWindow extends JPanel{
 		
 		decrBtn.setBorderPainted(false);
 		decrBtn.setLocation(playBtn.getX(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
+		decrBtn.setOpaque(false);
 		
 		JButton incrBtn = new JButton("+");
 		incrBtn.setSize(450/3,100);
@@ -95,13 +97,14 @@ public class MenuWindow extends JPanel{
 		
 		incrBtn.setBorderPainted(false);
 		incrBtn.setLocation(playBtn.getX() + playBtn.getWidth() - incrBtn.getWidth(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
+		incrBtn.setOpaque(false);
 		
 		JLabel pCount = new JLabel("" + MasterFrame.getCount());
 		pCount.setSize(450/3, 100);
 		pCount.setLocation(decrBtn.getX()+decrBtn.getWidth(), decrBtn.getY());
 		pCount.setFont(new Font("DIALOG", 0, 75));
-		pCount.setBackground(btnColor);
-		pCount.setOpaque(true);
+		//pCount.setBackground(btnColor);
+		pCount.setOpaque(false);
 		pCount.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		decrBtn.addActionListener(new ActionListener() {
