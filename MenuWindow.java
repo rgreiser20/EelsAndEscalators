@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
  */
 public class MenuWindow extends JPanel{
 	
-	public MenuWindow(JFrame parent, CardLayout cl, JPanel containedIn, String sendToGame) {
+	public MenuWindow(JFrame parent, CardLayout cl, JPanel containedIn, String sendToGame, String sendToRules) {
 		this.setSize(400, 300);
 		this.setLayout(null);
 		//The spacing inbetween the buttons
@@ -52,6 +52,7 @@ public class MenuWindow extends JPanel{
 		playBtn.setBackground(btnColor);
 		playBtn.setBorderPainted(false);
 		playBtn.setLocation(parent.getWidth()/2 - playBtn.getWidth()/2, parent.getHeight()/2 - playBtn.getHeight()/2);
+		playBtn.setOpaque(false);
 		playBtn.addActionListener(new ActionListener() {
 		
 			@Override
@@ -71,14 +72,12 @@ public class MenuWindow extends JPanel{
 		rulesBtn.setBackground(btnColor);
 		
 		rulesBtn.setBorderPainted(false);
+		rulesBtn.setOpaque(false);
 		rulesBtn.setLocation(playBtn.getX(), playBtn.getY()+playBtn.getHeight() + spacer);
 		rulesBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-				if(rulesBtn.getForeground().equals(Color.red))
-					rulesBtn.setForeground(Color.blue);
-				else
-					rulesBtn.setForeground(Color.red);
+				cl.show(containedIn, sendToRules);
 			}
 		});
 		
@@ -89,6 +88,7 @@ public class MenuWindow extends JPanel{
 		
 		decrBtn.setBorderPainted(false);
 		decrBtn.setLocation(playBtn.getX(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
+		decrBtn.setOpaque(false);
 		
 		JButton incrBtn = new JButton("+");
 		incrBtn.setSize(450/3,100);
@@ -97,13 +97,14 @@ public class MenuWindow extends JPanel{
 		
 		incrBtn.setBorderPainted(false);
 		incrBtn.setLocation(playBtn.getX() + playBtn.getWidth() - incrBtn.getWidth(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
+		incrBtn.setOpaque(false);
 		
 		JLabel pCount = new JLabel("" + MasterFrame.getCount());
 		pCount.setSize(450/3, 100);
 		pCount.setLocation(decrBtn.getX()+decrBtn.getWidth(), decrBtn.getY());
 		pCount.setFont(new Font("DIALOG", 0, 75));
-		pCount.setBackground(btnColor);
-		pCount.setOpaque(true);
+		//pCount.setBackground(btnColor);
+		pCount.setOpaque(false);
 		pCount.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		decrBtn.addActionListener(new ActionListener() {
