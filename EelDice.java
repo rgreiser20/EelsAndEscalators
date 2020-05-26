@@ -2,6 +2,7 @@
  * 
  * @author Ryan Greiser & Logan Davison
  *
+ *
  */
 public class EelDice 
 {

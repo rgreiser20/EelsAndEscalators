@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  * 
- * @author Ryan Greiser & Logan Davison
+ * @author Ryan Greiser & Logan Davison 
  * 
  * @How_to_play:
 	* roll all 3 dice

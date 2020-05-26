@@ -11,7 +11,7 @@ import javax.swing.JComponent;
 
 public class Player extends JComponent implements MouseListener{
 	private Rectangle paddle = new Rectangle(0,0,100,100);
-	
+	 
 	public Player() {
 		setLocation(250, 180);
 		setSize(140,30);

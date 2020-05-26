@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 /**
  * 
  * @author Ryan Greiser & Logan Davison
- * 
+ *  
  */
 public class GameWindow extends JPanel{
 	

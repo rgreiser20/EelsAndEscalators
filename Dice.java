@@ -1,6 +1,7 @@
 /**
  * 
  * @author Ryan Greiser & Logan Davison
+ * 
  *
  */
 public class Dice 
