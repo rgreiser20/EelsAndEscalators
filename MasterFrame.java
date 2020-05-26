@@ -38,7 +38,8 @@ public class MasterFrame extends JFrame {
 		
 		MenuWindow menu = new MenuWindow(this, cl, overall, "game", "darules");
 		GameWindow game = new GameWindow();
-		DaRules rules = new DaRules(this);
+		DaRules rules = new DaRules(this, cl, overall, "menu");
+
 		
 		overall.add(game, "game");
 		overall.add(menu, "menu");

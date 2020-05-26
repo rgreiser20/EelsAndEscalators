@@ -3,6 +3,7 @@
  * @author Ryan Greiser & Logan Davison 
  *
  */
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -18,6 +19,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -27,7 +29,7 @@ public class DaRules extends JPanel
 {
 	
 	private Rectangle.Double rec = new Rectangle.Double(0,23,300,300);
-	public DaRules (JFrame parent)
+	public DaRules (JFrame parent, CardLayout cl, JPanel containedIn, String sendToMenu)
 	{
 		Color textColor = new Color(74, 189, 105);
 		
@@ -87,11 +89,29 @@ public class DaRules extends JPanel
 		label4.setFont(new Font("DIALOG", 0, 30));
 		label4.setForeground(textColor);
 		
+		JButton returnButton = new JButton("Return");
+		returnButton.setSize(450,100);
+		returnButton.setFont(new Font("DIALOG", 0, 75));
+		returnButton.setBorderPainted(false);
+		returnButton.setLocation(240, 600);
+		returnButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				cl.show(containedIn, sendToMenu);
+				
+			}
+			
+			
+		});
+		
+		
 		add(label0);
 		add(label1);
 		add(label2);
 		add(label3);
 		add(label4);
+		add(returnButton);
 		add(BackgroundDarkner);
 		add(board);
 	}
