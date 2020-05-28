@@ -70,6 +70,7 @@ public class MenuWindow extends JPanel{
 		rulesBtn.setSize(450,100);
 		rulesBtn.setFont(new Font("DIALOG", 0, 75));
 		rulesBtn.setBackground(btnColor);
+	
 		
 		rulesBtn.setBorderPainted(false);
 		rulesBtn.setOpaque(false);
