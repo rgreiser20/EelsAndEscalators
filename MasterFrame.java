@@ -36,8 +36,8 @@ public class MasterFrame extends JFrame {
 		CardLayout cl = new CardLayout();
 		overall.setLayout(cl);
 		
-		MenuWindow menu = new MenuWindow(this, cl, overall, "game", "darules");
 		GameWindow game = new GameWindow();
+		MenuWindow menu = new MenuWindow(this, cl, overall, "game", "darules", game);
 		DaRules rules = new DaRules(this, cl, overall, "menu");
 
 		

@@ -94,6 +94,9 @@ public class DaRules extends JPanel
 		returnButton.setFont(new Font("DIALOG", 0, 75));
 		returnButton.setBorderPainted(false);
 		returnButton.setLocation(240, 600);
+		returnButton.setOpaque(false);
+		returnButton.setForeground(textColor);
+		returnButton.setBackground(new Color(74, 177, 189));
 		returnButton.addActionListener(new ActionListener() {
 
 			@Override

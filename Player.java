@@ -21,7 +21,7 @@ public class Player extends JComponent implements MouseListener{
 	public void paintComponent(Graphics g)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-		g2.setColor(Color.WHITE);
+		g2.setColor(Color.RED);
 		g2.fill(paddle);
 	}
 
