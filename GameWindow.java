@@ -1,5 +1,6 @@
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -25,10 +26,17 @@ public class GameWindow extends JPanel{
 		this.setSize(400, 300);
 		this.setLayout(null);
 		
-		JButton button1 = new JButton("Click to head home");
-		button1.setLocation(40, 10);
-		button1.setSize(120,30);
-		button1.addActionListener(new ActionListener() {
+		JButton pauseBtn = new JButton("||");
+		Color textColor = new Color(74, 189, 105);
+		Color btnColor = new Color(74, 177, 189);
+		pauseBtn.setSize(60,50);
+		pauseBtn.setFont(new Font("DIALOG", 1, 35));
+		pauseBtn.setForeground(textColor);
+		pauseBtn.setBorderPainted(false);
+		pauseBtn.setBackground(btnColor);
+		pauseBtn.setLocation(15,15);
+		pauseBtn.setOpaque(false);
+		pauseBtn.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -39,7 +47,7 @@ public class GameWindow extends JPanel{
 		});
 		
 		
-		this.add(button1);
+		this.add(pauseBtn);
 
 	}
 	
@@ -53,6 +61,7 @@ public class GameWindow extends JPanel{
 				public void mouseDragged(MouseEvent e) {
 					int x = p1.getX() + e.getX();
 					int y = p1.getY() + e.getY();
+					System.out.println("X: " + x + " Y: " + y);
 					p1.setLocation(x, y);	
 				}
 				public void mouseMoved(MouseEvent e) {
