@@ -27,12 +27,12 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 public class PauseMenu extends JPanel
 {
-    public PauseMenu(JFrame parent, CardLayout cl, JPanel containedIn, String sendToMenu, String sendToGame)
+    public PauseMenu(JFrame parent, CardLayout cl, JPanel containedIn, String sendToMenu, String sendToGame, String sendToRules)
     {
         Color textColor = new Color(74, 189, 105);
         Color textColor2 = new Color(224, 9, 9);
         Color textColor3 = new Color(3, 205, 255);
-        
+        Color textColor4 = new Color(252, 190, 3);
         this.setLayout(null);
         JLabel board = new JLabel();
         board.setBounds(0, 0, 900, 900);
@@ -101,9 +101,30 @@ public class PauseMenu extends JPanel
     		
     	});
     	
+    	JButton returnRules = new JButton("Rules");
+    	returnRules.setSize(600,100);
+    	returnRules.setFont(new Font("DIALOG", 0, 75));
+    	returnRules.setBorderPainted(false);
+    	returnRules.setLocation(140, 500);
+    	returnRules.setOpaque(false);
+    	returnRules.setForeground(textColor4);
+    	returnRules.setBackground(new Color(74, 177, 189));
+    	returnRules.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cl.show(containedIn, sendToRules);
+				
+			}
+    		
+    		
+    		
+    	});
+    	
     	add(named);
     	add(returnGameButton);
 		add(returnMenuButton);
+		add(returnRules);
     	add(pauseLabel);
 		add(BackgroundDarkner);
 		add(board);
