@@ -16,7 +16,14 @@
 /DaRules$1.class
 /PauseMenu$1.class
 /PauseMenu$2.class
+<<<<<<< HEAD
 /FancyText.class
 /GameWindow$4.class
 /GameWindow$5.class
 /GameWindow$6.class
+=======
+/PauseRules.class
+/PauseRules$1.class
+/PauseRules$2.class
+/PauseMenu$3.class
+>>>>>>> branch 'testingBranch' of https://github.com/rgreiser20/EelsAndEscalators.git

@@ -25,11 +25,11 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-public class DaRules extends JPanel
+public class PauseRules extends JPanel
 {
 	
 	private Rectangle.Double rec = new Rectangle.Double(0,23,300,300);
-	public DaRules (JFrame parent, CardLayout cl, JPanel containedIn, String sendToMenu)
+	public PauseRules(JFrame parent, CardLayout cl, JPanel containedIn, String sendToMenu)
 	{
 		Color textColor = new Color(74, 189, 105);
 		Color textColor2 = new Color(224, 9, 9);

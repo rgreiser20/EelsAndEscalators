@@ -29,6 +29,7 @@ public class MenuWindow extends JPanel{
 		//The spacing inbetween the buttons
 		int spacer = 10;
 		Color textColor = new Color(74, 189, 105);
+		Color textColor2 = new Color(224, 9, 9);
 		Color btnColor = new Color(74, 177, 189);
 		
 		JLabel board = new JLabel();
@@ -45,6 +46,12 @@ public class MenuWindow extends JPanel{
 		BackgroundDarkner.setBounds(0, 0, 900, 900);
 		BackgroundDarkner.setBackground(new Color(50,50,50,200));
 		BackgroundDarkner.setOpaque(true);
+		
+		JLabel title = new JLabel("Eels and Escalators");
+		title.setLocation(7, 200);
+		title.setSize(900, 100);
+        title.setFont(new Font("DIALOG", 0, 100));
+        title.setForeground(textColor2);
 		
 		JButton playBtn = new JButton("Start Game");
 		playBtn.setSize(450,100);
@@ -134,6 +141,7 @@ public class MenuWindow extends JPanel{
 		rulesBtn.setForeground(textColor);
 		playBtn.setForeground(textColor);
 		
+		this.add(title);
 		this.add(pCount);
 		this.add(incrBtn);
 		this.add(decrBtn);
