@@ -14,12 +14,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 /**
  * 
  * @author Ryan Greiser & Logan Davison
  *  
  */
-public class GameWindow extends JPanel{
+public class GameWindow extends JPanel implements ActionListener{
 	
 	
 	public GameWindow(CardLayout cl, JPanel containedIn, String sendTo) {
@@ -45,10 +46,15 @@ public class GameWindow extends JPanel{
 			}
 			
 		});
-		
+		Timer t1 = new Timer(5,this);
+		t1.start();
 		
 		this.add(pauseBtn);
 
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		
 	}
 	
 	public void makePlayers() {
@@ -59,12 +65,12 @@ public class GameWindow extends JPanel{
 				
 				@Override
 				public void mouseDragged(MouseEvent e) {
-					int x = p1.getX() + e.getX();
-					int y = p1.getY() + e.getY();
-					System.out.println("X: " + x + " Y: " + y);
+					int x = p1.getX() + e.getX() - 15;
+					int y = p1.getY() + e.getY() - 15;
 					p1.setLocation(x, y);	
 				}
 				public void mouseMoved(MouseEvent e) {
+				
 				}
 				
 			});
@@ -80,8 +86,6 @@ public class GameWindow extends JPanel{
 			e.printStackTrace();
 		}
 		this.add(board);
-
-		
 	}
 
 }

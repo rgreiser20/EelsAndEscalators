@@ -13,10 +13,10 @@ public class Player extends JComponent{
 	private Rectangle paddle = new Rectangle(0,0,100,100);
 	
 	private static int startX = 14;
-	private static int startY = 754;
+	private static int startY = 710;
 	
 	public Player() {
-		setLocation(250, 180);
+		setLocation(14, startY+=35);
 		setSize(30,30);
 		
 	}
@@ -28,16 +28,6 @@ public class Player extends JComponent{
 		g2.fill(paddle);
 	}
 	
-	public int getX() {
-		return startX;
-	}
-	
-	public void incX() {
-		startX += 35;
-	}
-	
-	public int getY() {
-		return startY;
-	}
+
 	
 }

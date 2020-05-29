@@ -83,7 +83,6 @@ public class MenuWindow extends JPanel{
 		decrBtn.setSize(450/3,100);
 		decrBtn.setFont(new Font("DIALOG", 0, 75));
 		decrBtn.setBackground(btnColor);
-		
 		decrBtn.setBorderPainted(false);
 		decrBtn.setLocation(playBtn.getX(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
 		decrBtn.setOpaque(false);
@@ -92,7 +91,6 @@ public class MenuWindow extends JPanel{
 		incrBtn.setSize(450/3,100);
 		incrBtn.setFont(new Font("DIALOG", 0, 75));
 		incrBtn.setBackground(btnColor);
-		
 		incrBtn.setBorderPainted(false);
 		incrBtn.setLocation(playBtn.getX() + playBtn.getWidth() - incrBtn.getWidth(), rulesBtn.getY()+rulesBtn.getHeight() + spacer);
 		incrBtn.setOpaque(false);

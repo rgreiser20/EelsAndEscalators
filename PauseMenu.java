@@ -25,6 +25,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+
 public class PauseMenu extends JPanel
 {
     public PauseMenu(JFrame parent, CardLayout cl, JPanel containedIn, String sendToMenu)
