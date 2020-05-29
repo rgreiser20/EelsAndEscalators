@@ -58,7 +58,8 @@ public class MenuWindow extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cl.show(containedIn, sendToGame);
-				game.makePlayers();
+				game.reset();
+				
 			}
 			
 		});
@@ -102,6 +103,7 @@ public class MenuWindow extends JPanel{
 		//pCount.setBackground(btnColor);
 		pCount.setOpaque(false);
 		pCount.setHorizontalAlignment(SwingConstants.CENTER);
+		pCount.setForeground(textColor);
 		
 		decrBtn.addActionListener(new ActionListener() {
 
@@ -127,7 +129,6 @@ public class MenuWindow extends JPanel{
 			
 		});
 		
-		pCount.setForeground(textColor);
 		incrBtn.setForeground(textColor);
 		decrBtn.setForeground(textColor);
 		rulesBtn.setForeground(textColor);

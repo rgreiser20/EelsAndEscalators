@@ -9,7 +9,7 @@ public class EelDice
 
 	//true -> esclator
 	//false -> eel
-	public static boolean roll()
+	public boolean roll()
 	{
 		int num = (int)(Math.random()*2);
 		return num == 0;
