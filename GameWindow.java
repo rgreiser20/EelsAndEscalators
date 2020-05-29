@@ -22,7 +22,7 @@ import javax.swing.JPanel;
 public class GameWindow extends JPanel{
 	
 	
-	public GameWindow() {
+	public GameWindow(CardLayout cl, JPanel containedIn, String sendTo) {
 		this.setSize(400, 300);
 		this.setLayout(null);
 		
@@ -40,7 +40,7 @@ public class GameWindow extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			//	cl.show(containedIn, sendTo);
+				cl.show(containedIn, sendTo);
 		
 			}
 			

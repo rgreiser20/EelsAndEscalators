@@ -9,12 +9,15 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JComponent;
 
 
-public class Player extends JComponent implements MouseListener{
+public class Player extends JComponent{
 	private Rectangle paddle = new Rectangle(0,0,100,100);
+	
 	private static int startX = 14;
+	private static int startY = 754;
+	
 	public Player() {
 		setLocation(250, 180);
-		setSize(140,30);
+		setSize(30,30);
 		
 	}
 	
@@ -24,49 +27,17 @@ public class Player extends JComponent implements MouseListener{
 		g2.setColor(Color.RED);
 		g2.fill(paddle);
 	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		System.out.println("here we go");
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	
+	public int getX() {
+		return startX;
 	}
 	
-//	@Override
-//	public void mouseDragged(MouseEvent e) {
-//		int x = getX() + e.getX();
-//		int y = getY() + e.getY();
-//		setLocation(x, y);
-//
-//		
-//	}
-//
-//	@Override
-//	public void mouseMoved(MouseEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	public void incX() {
+		startX += 35;
+	}
+	
+	public int getY() {
+		return startY;
+	}
+	
 }
