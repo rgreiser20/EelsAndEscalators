@@ -9,3 +9,7 @@
     * Move them manually with mouse
     * Move them automatically
 *hi ryan
+
+## Known issues
+	- French is not yet supported
+	- Thai has rendering issues on mobile devices
